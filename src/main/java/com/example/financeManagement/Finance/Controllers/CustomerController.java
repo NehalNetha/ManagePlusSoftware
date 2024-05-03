@@ -5,13 +5,12 @@ import com.example.financeManagement.Finance.mdbspringboot.model.Employee;
 import com.example.financeManagement.Finance.service.CustomerService;
 import com.example.financeManagement.Finance.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -27,6 +26,6 @@ public class CustomerController {
     }
 
     @PostMapping(path = "/customers")
-    public Customer createCustomer(Customer customer){ return customerService.createCustomer(customer);}
+    public Customer createCustomer(@RequestBody Customer customer){ return customerService.createCustomer(customer);}
 
 }

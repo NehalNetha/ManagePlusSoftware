@@ -2,6 +2,8 @@ package com.example.financeManagement.Finance;
 
 import com.example.financeManagement.Finance.repository.CustomerRepository;
 import com.example.financeManagement.Finance.repository.EmployeeRepository;
+import com.example.financeManagement.Finance.repository.PayrollRepository;
+import com.example.financeManagement.Finance.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +19,12 @@ public class FinanceApplication implements CommandLineRunner {
 
 	@Autowired
 	private CustomerRepository customerRepository;
+
+	@Autowired
+	private VendorRepository vendorRepository;
+
+	@Autowired
+	private PayrollRepository payrollRepository;
 
 
 	public static void main(String[] args) {
